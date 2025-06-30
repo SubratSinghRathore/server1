@@ -15,9 +15,14 @@ app.get('/', (req, res) => {
 app.get('/server1', (req, res) => {
     setInterval(() => {
         try {
-            fetch('https://server1.onrender.com')
+            fetch('https://server2-urdt.onrender.com')
+            .then(res => {
+                console.log(res.status)
+            })
         } catch (error) {
-            
+            console.log(error)
         }
     }, 300000);
 })
+
+app.listen(8002, console.log('listening on port 3000'))
